@@ -1,3 +1,13 @@
+1. #!/bin/sh
+read -p "enter the filename :" filename
+if [ -d $filename ]
+then 
+echo "first is present"
+else
+echo "first is no present"
+ 
+fi
+
 3. Count the number of directories and files in a specific folder
 
 # Replace /path/to/your/folder with your specific folder path
