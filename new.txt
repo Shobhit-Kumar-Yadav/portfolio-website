@@ -1,0 +1,66 @@
+3. Count the number of directories and files in a specific folder
+
+# Replace /path/to/your/folder with your specific folder path
+folder_path="/path/to/your/folder"
+
+# Count directories
+num_dirs=$(find "$folder_path" -type d | wc -l)
+
+# Count files
+num_files=$(find "$folder_path" -type f | wc -l)
+
+echo "Number of directories: $num_dirs"
+echo "Number of files: $num_files"
+
+4. Find the smallest number from the array
+
+# Define an array
+array=(3 5 1 9 2)
+
+# Find the smallest number
+min=${array[0]}
+for num in "${array[@]}"; do
+  if (( num < min )); then
+    min=$num
+  fi
+done
+
+echo "The smallest number is: $min"
+5. Find the sum of the array
+
+# Define an array
+array=(3 5 1 9 2)
+
+# Calculate the sum
+sum=0
+for num in "${array[@]}"; do
+  sum=$((sum + num))
+done
+
+echo "The sum of the array is: $sum"
+
+6. Display all the directory names
+
+# Replace /path/to/your/folder with your specific folder path
+folder_path="/path/to/your/folder"
+
+# Display all directory names
+find "$folder_path" -type d
+
+7. Check whether the number is a palindrome or not
+
+# Function to check if a number is a palindrome
+is_palindrome() {
+  local num=$1
+  local reversed_num=$(echo "$num" | rev)
+  
+  if [ "$num" -eq "$reversed_num" ]; then
+    echo "$num is a palindrome"
+  else
+    echo "$num is not a palindrome"
+  fi
+}
+
+# Replace 121 with your number
+number=121
+is_palindrome "$number"
