@@ -74,3 +74,73 @@ is_palindrome() {
 # Replace 121 with your number
 number=121
 is_palindrome "$number"
+
+
+
+
+
+
+
+
+--> Type of scalar function
+    1.Numeric function     --> round,trunc,mod
+    2.Character function   --> concat,lengthlower,upper,instr
+    3. Date function            -->relate to date
+
+Numeric function:-
+````
+
+select * from employee;
+
+[ROUND]
+------------
+select round(100.2345,2) from dual; o/p: 100.23  ==>dual is a dummy table
+
+select round(100.2345) from dual;    o/p:100
+
+select round(100.7897) from dual;    o/p:101
+
+select id,name,sal,sal/30,round(sal/30,2), round(sal/30) from employee;
+
+[TRUNC]
+-----------
+select trunc(100.232476,3) from dual;  o/p:100.232
+select trunc(100.9890) from dual;         o/p:100
+
+[MOD]
+---------
+select  mod(10,2) from dual;
+select mod(17,5) from dual;
+
+Character function:-
+```
+select upper('mohit') from dual;
+
+select id,name,upper(name), lower(name), initcap(name), length(name) from employee;
+
+select * from employee where lenght(name)>5;
+
+select * from employee where lenght(name)=6;
+
+select id,name,concat('Welcome ',name), instr(name,'a')  from employee;
+
+select id, name, dept, lpad(dept,12,'*') from employee;
+
+select id, name, dept, rpad(dept,12,'*') from employee;
+
+select id,name,replace(name,'a','j') from employee;
+
+select instr('sachin','i') from dual; //finding location
+
+Date function:-
+`````
+select sysdate from dual;
+
+alter table employee add dob date;
+alter table employee add doj date;
+update emplloyee set dob=' ', doj=' ' where id=4; ,etc..................
+
+select id,name,doj,doj+2,doj+20 from employee;
+
+
+
